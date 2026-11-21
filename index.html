@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café y Migajas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!--"Administrar ventas" en la esquina -->
+  <header class="navbar">
+    <div class="brand">
+      <h1>☕ Café y Migajas</h1>
+      <p>Catálogo de productos y pedidos</p>
+    </div>
+
+    <div class="esquina-admin">
+      <button id="btnAdministrarVentas" class="btn-esquina">Administrar ventas 🔒</button>
+      <button id="btnSalirAdmin" class="btn-salir oculto">Salir de Admin</button>
+    </div>
+  </header>
+
+  <!-- Filtros de categoría -->
+  <section class="filtros">
+    <button class="btn-filtro activo" data-categoria="Todos">Todos</button>
+    <button class="btn-filtro" data-categoria="Bebidas">Bebidas</button>
+    <button class="btn-filtro" data-categoria="Postres">Postres</button>
+    <button class="btn-filtro" data-categoria="Salados">Salados</button>
+  </section>
+
+  <!-- Panel del Administrador -->
+  <section id="panelAdmin" class="panel-admin oculto">
+    <div class="admin-encabezado">
+      <h2>Administración de Ventas y Productos (CRUD)</h2>
+      <div class="resumen-ventas">
+        <span>Ventas realizadas: <strong id="totalVentas">0</strong></span>
+        <span>Total recaudado: <strong id="totalIngresos">Bs. 0</strong></span>
+      </div>
+    </div>
+
+    <!-- Formulario crear / editar -->
+    <form id="formProducto" class="form-crud">
+      <input type="hidden" id="productoId">
+      <input type="text" id="nombre" placeholder="Nombre del producto" required>
+      <input type="number" id="precio" placeholder="Precio (Bs.)" min="1" step="0.5" required>
+      <input type="number" id="stock" placeholder="Stock disponible" min="0" required>
+      <select id="categoria" required>
+        <option value="">Categoría</option>
+        <option value="Bebidas">Bebidas</option>
+        <option value="Postres">Postres</option>
+        <option value="Salados">Salados</option>
+      </select>
+      <input type="date" id="fechaVencimiento" title="Fecha de vencimiento" required>
+      <input type="url" id="imagen" placeholder="URL de imagen" required>
+      <div class="acciones-form">
+        <button type="submit" id="btnGuardar" class="btn-guardar">Guardar Producto</button>
+        <button type="button" id="btnCancelar" class="btn-cancelar oculto">Cancelar</button>
+      </div>
+    </form>
+
+    <!--CRUD -->
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Vencimiento</th>
+            <th>CRUD</th>
+          </tr>
+        </thead>
+        <tbody id="tablaAdminBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Registro de ventas hechas por clientes -->
+    <div class="historial-ventas">
+      <h3>Registro de compras recientes</h3>
+      <ul id="listaVentas"></ul>
+    </div>
+  </section>
+
+  <!-- Catálogo para el cliente -->
+  <main class="contenedor">
+    <div id="catalogo" class="grid-productos"></div>
+  </main>
+
+  <!-- Modal de login -->
+  <div id="modalLogin" class="modal oculto">
+    <div class="modal-caja">
+      <span id="cerrarModal" class="cerrar">&times;</span>
+      <h3>Iniciar sesión como Administrador</h3>
+      <form id="formLogin">
+        <input type="text" id="usuarioLogin" placeholder="Usuario" required>
+        <input type="password" id="claveLogin" placeholder="Contraseña" required>
+        <p id="mensajeErrorLogin" class="error-login oculto">Usuario o contraseña incorrectos</p>
+        <button type="submit" class="btn-guardar">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>

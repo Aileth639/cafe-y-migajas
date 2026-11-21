@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fdf8f3;
+  color: #3e2723;
+}
+
+.navbar {
+  background-color: #4e342e;
+  color: #fff8e1;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.brand h1 {
+  font-size: 1.7rem;
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #d7ccc8;
+}
+
+.btn-esquina, .btn-salir {
+  background-color: #ef6c00;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.15rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-esquina:hover, .btn-salir:hover {
+  background-color: #e65100;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.btn-filtro {
+  background-color: #efebe9;
+  color: #4e342e;
+  border: 1px solid #bcaaa4;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-filtro.activo, .btn-filtro:hover {
+  background-color: #6d4c41;
+  color: #fff;
+}
+
+.contenedor {
+  max-width: 1120px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(62, 39, 35, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.badge {
+  align-self: flex-start;
+  background-color: #ffe0b2;
+  color: #e65100;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+.precio {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.stock {
+  font-size: 0.9rem;
+  color: #5d4037;
+}
+
+.vencimiento {
+  font-size: 0.85rem;
+  color: #795548;
+}
+
+.compra-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.cantidad-input {
+  width: 65px;
+  padding: 0.5rem;
+  border: 1px solid #bcaaa4;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn-comprar {
+  flex: 1;
+  background-color: #6d4c41;
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-comprar:hover:not(:disabled) {
+  background-color: #4e342e;
+}
+
+.btn-comprar:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Panel Admin */
+.panel-admin {
+  max-width: 1120px;
+  margin: 1rem auto 2rem;
+  background-color: #fff3e0;
+  border: 2px solid #ffb74d;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.admin-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resumen-ventas {
+  display: flex;
+  gap: 1.2rem;
+  background: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ffcc80;
+}
+
+.form-crud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-crud input, .form-crud select {
+  padding: 0.6rem;
+  border: 1px solid #bcaaa4;
+  border-radius: 6px;
+}
+
+.acciones-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-guardar {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #757575;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tabla-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 0.7rem;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #4e342e;
+  color: #fff;
+}
+
+.btn-editar {
+  background-color: #fbc02d;
+  border: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.btn-eliminar {
+  background-color: #c62828;
+  color: #fff;
+  border: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.historial-ventas {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.historial-ventas h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.historial-ventas ul {
+  padding-left: 1.2rem;
+}
+
+.historial-ventas li {
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+}
+
+/* Modal Login */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-caja {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 360px;
+  position: relative;
+}
+
+.modal-caja h3 {
+  margin-bottom: 1rem;
+}
+
+.modal-caja form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-caja input {
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.error-login {
+  color: #c62828;
+  font-size: 0.85rem;
+}
+
+.oculto {
+  display: none !important;
+}
